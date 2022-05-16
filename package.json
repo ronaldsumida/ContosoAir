@@ -12,7 +12,7 @@
     "all-test:watch": "npx jest --watch --testRegex=.*\\.i?spec\\.js$"
   },
   "jest": {
-    "reporters": [ "npx jest-junit"],
+    "reporters": [ "default", "jest-junit" ],
     "collectCoverage": true,
     "coverageReporters": [
       "cobertura",
