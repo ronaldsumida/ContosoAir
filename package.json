@@ -6,13 +6,13 @@
     "start": "node ./server.js --production",
     "local:build": "webpack --env.NODE_ENV=development --mode=development",
     "build": "exit 0",
-    "unit-test": "npx jest",
-    "int-test": "npx jest --testRegex=.*\\.ispec\\.js$",
-    "test": "npx jest --testRegex=.*\\.i?spec\\.js$",
-    "all-test:watch": "npx jest --watch --testRegex=.*\\.i?spec\\.js$"
+    "unit-test": "jest",
+    "int-test": "jest --testRegex=.*\\.ispec\\.js$",
+    "test": "jest --testRegex=.*\\.i?spec\\.js$",
+    "all-test:watch": "jest --watch --testRegex=.*\\.i?spec\\.js$"
   },
   "jest": {
-    "reporters": [ "default" ],
+    "testResultsProcessor": "jest-junit-reporter",
     "collectCoverage": true,
     "coverageReporters": [
       "cobertura",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "autoprefixer": "^9.2.1",
     "css-loader": "^1.0.0",
-    "jest": "^28.1.0",
+    "jest": "^24.0.0",
     "jest-junit-reporter": "^1.1.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.9.4",
